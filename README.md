@@ -13,16 +13,16 @@ The project architecture is decoupled into four high-performance modules to ensu
 * **Source:** Real-time integration with the **USGS (United States Geological Survey)** GeoJSON API.
 * **Capability:** Captures live magnitude, location-place, Unix timestamps, and 3D geospatial coordinates (Lat/Long/Depth).
 
-### 2. 🧹 Data Refinement & Wrangling (`E_cleaning.py`)
+### 2. Data Refinement & Wrangling (`E_cleaning.py`)
 * **Precision:** Implements high-precision rounding for coordinates (4 decimal places) and depth (2 decimal places) to ensure mapping accuracy.
 * **Integrity:** Automated null-value detection and handling to prevent data corruption during analysis.
 
 ### 3. Intelligent Processing & Logic (`E_main.py`)
 * **Time Normalization:** Converts raw USGS milliseconds into standard human-readable UTC timestamps.
 * **Disaster Classification:** Uses a custom-engineered algorithm to categorize events by risk:
-    * 🔴 **High Risk:** Magnitude $\ge 5$ (Potential for catastrophic damage).
-    * 🟡 **Medium Risk:** $3 \le \text{Mag} < 5$ (Significant tremors).
-    * ⚪ **Low Risk:** $\text{Mag} < 3$ (Minor seismic activity).
+    *  **High Risk:** Magnitude $\ge 5$ (Potential for catastrophic damage).
+    *  **Medium Risk:** $3 \le \text{Mag} < 5$ (Significant tremors).
+    *  **Low Risk:** $\text{Mag} < 3$ (Minor seismic activity).
 
 ### 4. Command Center Dashboard (`E_visualization.py`)
 A custom-built, **Dark-Theme Visualization Suite** designed for 24/7 monitoring. It features:
